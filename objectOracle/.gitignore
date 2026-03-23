@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+env/
+
+# Models & weights (large binary files)
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*_int8.onnx
+
+# Data
+data/images/
+data/labels/
+data/*.zip
+
+# Training runs
+runs/
+wandb/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Env
+.env
+
+# Notebooks
+notebooks/.ipynb_checkpoints/
+notebooks/detection_result.png
+
+# OS
+.DS_Store
+Thumbs.db

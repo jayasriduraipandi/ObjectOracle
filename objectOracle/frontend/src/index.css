@@ -1,0 +1,50 @@
+:root {
+  --bg-primary:   #0f1117;
+  --bg-secondary: #161b27;
+  --bg-card:      #1e2535;
+  --border:       rgba(255,255,255,0.08);
+  --text-primary: #e2e8f0;
+  --text-muted:   #8892a4;
+  --accent:       #7c6df5;
+  --accent-dim:   rgba(124,109,245,0.15);
+  --green:        #22d3a5;
+  --amber:        #f59e0b;
+  --red:          #f87171;
+  --blue:         #60a5fa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}

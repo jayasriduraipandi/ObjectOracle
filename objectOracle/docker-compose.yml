@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DEVICE=cpu
+      - REDIS_URL=redis://redis:6379/0
+      - DEBUG=false
+    volumes:
+      - ./models:/app/models
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    command: celery -A tasks worker --loglevel=info --concurrency=2
+    environment:
+      - DEVICE=cpu
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./models:/app/models
+    depends_on:
+      - redis
+    restart: unless-stopped

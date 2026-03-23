@@ -1,0 +1,31 @@
+# data/dataset.yaml
+# ObjectOracle custom dataset configuration for YOLOv8 training
+#
+# Directory structure expected:
+#   data/
+#     images/
+#       train/   *.jpg / *.png
+#       val/     *.jpg / *.png
+#     labels/
+#       train/   *.txt  (YOLO format: class cx cy w h)
+#       val/     *.txt
+
+path: ./data         # root dataset directory
+train: images/train
+val:   images/val
+
+# Number of classes
+nc: 10
+
+# Class names (customize for your domain)
+names:
+  0: person
+  1: car
+  2: bicycle
+  3: motorcycle
+  4: bus
+  5: truck
+  6: traffic light
+  7: stop sign
+  8: dog
+  9: cat
