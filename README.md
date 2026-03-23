@@ -11,7 +11,7 @@ and instance segmentation using YOLOv8, CLIP, and SAM.
 - React dashboard with live annotation overlays
 - ONNX edge deployment (Jetson Nano / Raspberry Pi)
 - Docker Compose for one-command setup
-- 
+
 ## Quick Start
 
 ```bash
